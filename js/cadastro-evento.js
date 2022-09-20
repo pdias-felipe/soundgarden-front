@@ -37,8 +37,9 @@ function criaEvento(event){
         name,
         "attractions": attractions.split(','),
         description,
-        scheduled,
+        "scheduled": new Date(scheduled).toISOString(),
         number_tickets,
+        "poster": 'https://doity.com.br/blog/app/uploads/2022/05/Promocao-de-eventos.png',
 
     }
 
