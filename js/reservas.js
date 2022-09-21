@@ -15,7 +15,7 @@ async function getReservas() {
                 <label>nome: </label> <input type="text" value="${reservas.owner_name}" readonly> <br>
                 <label>email: </label> <input type="text" value="${reservas.owner_email}" readonly> <br>
                 <label>Num. tickets: </label> <input type="text" value="${reservas.number_tickets}" readonly> <br>
-                <label>evento: </label> <input type="text" value="${reservas.event}" readonly> <br>
+                <label>evento: </label> <input type="text" value="${reservas.event.name}" readonly> <br>
                 <label>data: </label> <input type="text" value="${reservas.created_at}" readonly> <br>
             </div> 
             `;

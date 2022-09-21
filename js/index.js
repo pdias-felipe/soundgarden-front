@@ -15,6 +15,8 @@ function exibeEventos(eventos){
 
     const divEventos = document.querySelector('#eventos-cadastrados');
     console.log(eventos)
+    eventos = eventos.slice(0, 3)
+    console.log(eventos)
     eventos.forEach(evento => {
         divEventos.innerHTML += `
         <article class="evento card p-5 m-3" id="${evento._id}">
