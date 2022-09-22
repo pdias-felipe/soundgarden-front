@@ -25,7 +25,7 @@ function exibeEventos(eventos) {
         <td>${evento.name}</td>
         <td>${evento.attractions}</td>
         <td>
-            <a href="reservas.html" class="btn btn-dark">ver reservas</a>
+            <a href="reservas.html?id=${evento._id}" class="btn btn-dark">ver reservas</a>
             <a href="editar-evento.html?id=${evento._id}" class="btn btn-secondary">editar</a>
             <a href="#" class="btn btn-danger" onclick="excluirEvento('${evento._id}')">excluir</a>
         </td>
