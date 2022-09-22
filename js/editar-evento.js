@@ -116,5 +116,5 @@ function atualizarEvento(event){
     console.log(res) })
 }
 
-pegarInfomacoes();;
+pegarInfomacoes();
 
