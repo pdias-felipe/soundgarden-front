@@ -1,4 +1,4 @@
-et body = document.getElementsByTagName("body")[0];
+let body = document.getElementsByTagName("body")[0];
 body.onload = editEvent()
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
