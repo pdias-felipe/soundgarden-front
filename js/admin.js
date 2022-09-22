@@ -1,3 +1,4 @@
+const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
 function carregaEventos() {
 
@@ -14,18 +15,19 @@ function exibeEventos(eventos) {
 
     const divEventos = document.querySelector('#eventos');
     let index = 0
+    divEventos.innerHTML = ''
     eventos.forEach(evento => {
         index++
         divEventos.innerHTML += `
-        <tr>
+        <tr id="${evento._id}">
         <th scope="row">${index}</th>
         <td>${convertDate(evento.scheduled)}</td>
         <td>${evento.name}</td>
         <td>${evento.attractions}</td>
         <td>
             <a href="reservas.html" class="btn btn-dark">ver reservas</a>
-            <a href="editar.html" class="btn btn-secondary">editar</a>
-            <a href="editar.html" class="btn btn-danger">excluir</a>
+            <a href="editar-evento.html?id=${evento._id}" class="btn btn-secondary">editar</a>
+            <a href="#" class="btn btn-danger" onclick="excluirEvento('${evento._id}')">excluir</a>
         </td>
         </tr>`
     })
@@ -50,4 +52,16 @@ function formatTime(date) {
     const [time, _] = fullTime.split('.')
 
     return time;
+}
+
+async function excluirEvento(eventoId) {
+    try {        
+        const response = await fetch(`${BASE_URL}/events/${eventoId}`, { method: "DELETE" });        
+        if(response.status === 204){
+            carregaEventos()
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
 }
