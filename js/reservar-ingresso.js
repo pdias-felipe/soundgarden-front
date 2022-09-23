@@ -1,6 +1,6 @@
-const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
+const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com/bookings";
 
-function carregaEventos() {
+function reservaIngresso() {
 
     fetch('https://xp41-soundgarden-api.herokuapp.com/events')
         .then(response => response.json())
